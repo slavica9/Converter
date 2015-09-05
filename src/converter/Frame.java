@@ -19,5 +19,8 @@ public class Frame extends JFrame{
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
+        SubPanel panel = new SubPanel(this);
+        panel.setVisible(true);
+        add(panel);
     }
 }    
