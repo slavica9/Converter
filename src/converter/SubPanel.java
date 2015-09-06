@@ -12,6 +12,8 @@ public class SubPanel extends JPanel{
     tp.add(new Tezina());
     tp.add(new Brzina());
     tp.add(new Vrijeme());
+    tp.add(new Temperatura());
+    tp.add(new Povrsina());
     
     add(tp);
     }
