@@ -9,6 +9,10 @@ public class SubPanel extends JPanel{
     JTabbedPane tp = new JTabbedPane();
     tp.add(new Valute());
     tp.add(new Length());
+    tp.add(new Tezina());
+    tp.add(new Brzina());
+    tp.add(new Vrijeme());
+    
     add(tp);
     }
     

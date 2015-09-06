@@ -1,16 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package converter;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Length extends javax.swing.JPanel {
+/**
+ *
+ * @author Slavica
+ */
+public class Vrijeme extends javax.swing.JPanel {
 
-    public Length() {
+    /**
+     * Creates new form Vrijeme
+     */
+    public Vrijeme() {
         initComponents();
-        firstValuteBox.setSelectedItem("Metar");
-        secondValuteBox.setSelectedItem("Metar");
-        
-        secondAmountField.setEditable(false);
     }
 
     /**
@@ -22,25 +30,28 @@ public class Length extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        firstAmountLabel = new javax.swing.JLabel();
-        firstValuteLabel = new javax.swing.JLabel();
-        firstAmountField = new javax.swing.JTextField();
-        secondAmountField = new javax.swing.JTextField();
-        secondAmountLabel = new javax.swing.JLabel();
-        secondValuteLabel = new javax.swing.JLabel();
-        button = new javax.swing.JButton();
         firstValuteBox = new javax.swing.JComboBox();
+        firstAmountLabel = new javax.swing.JLabel();
         secondValuteBox = new javax.swing.JComboBox();
+        secondValuteLabel = new javax.swing.JLabel();
+        secondAmountField = new javax.swing.JTextField();
+        firstAmountField = new javax.swing.JTextField();
+        firstValuteLabel = new javax.swing.JLabel();
+        button = new javax.swing.JButton();
+        secondAmountLabel = new javax.swing.JLabel();
 
-        setName("Duzina"); // NOI18N
+        setName("Vrijeme"); // NOI18N
+
+        firstValuteBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Milisekund", "Sekund", "Minut", "Sat", "Dan", "Sedmica", "Godina" }));
 
         firstAmountLabel.setText("amount");
 
-        firstValuteLabel.setText("First Valute");
-
-        secondAmountLabel.setText("amount");
+        secondValuteBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Milisekund", "Sekund", "Minut", "Sat", "Dan", "Sedmica", "Godina" }));
+        secondValuteBox.setName("Vrijeme"); // NOI18N
 
         secondValuteLabel.setText("Second Valute");
+
+        firstValuteLabel.setText("First Valute");
 
         button.setText("Convert");
         button.addActionListener(new java.awt.event.ActionListener() {
@@ -49,9 +60,7 @@ public class Length extends javax.swing.JPanel {
             }
         });
 
-        firstValuteBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Milimetar", "Centimetar", "Decimetar", "Metar", "Kilometar", "Inči", "Jardi", "Milje", "Nautičke milje" }));
-
-        secondValuteBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Milimetar", "Centimetar", "Decimetar", "Metar", "Kilometar", "Inči", "Jardi", "Milje", "Nautičke milje" }));
+        secondAmountLabel.setText("amount");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -120,20 +129,38 @@ public class Length extends javax.swing.JPanel {
             firstAmountField.setText("");
             firstAmountField.grabFocus();
         }else{
-            Float vrijednost = Float.parseFloat(firstAmountField.getText());
+            Double vrijednost = Double.parseDouble(firstAmountField.getText());
             double value1 = getConvertFactor(firstValuteBox.getSelectedItem().toString());
             double value2 = getConvertFactor(secondValuteBox.getSelectedItem().toString());
             Double temp = vrijednost*(value2/value1);
 
             String tempString = temp.toString();
             int index = tempString.indexOf('.');
-            int rest = tempString.substring(index+1).length()-1;
-            String insert = tempString.substring(0, index + ((rest < 4)?(rest):(4)));
+            int rest = tempString.substring(index+1).length();
+            String insert = tempString.substring(0, index+1 + ((rest <= 4)?(rest):(4)));
 
             secondAmountField.setText(""+insert);
         }
     }//GEN-LAST:event_buttonActionPerformed
-
+    
+    private double getConvertFactor(String value) {
+        if(value.equals("Milisekund"))
+            return  3600000;
+        else if(value.equals("Sekund"))
+            return 3600;
+        else if(value.equals("Minut"))
+            return 60;
+        else if(value.equals("Sat"))
+            return 1;
+        else if(value.equals("Dan"))
+            return 0.041667;
+        else if(value.equals("Sedmica"))
+            return 0.005952;
+        else if(value.equals("Godina"))
+            return 0.000114;
+        
+        return -1;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton button;
@@ -146,27 +173,4 @@ public class Length extends javax.swing.JPanel {
     private javax.swing.JComboBox secondValuteBox;
     private javax.swing.JLabel secondValuteLabel;
     // End of variables declaration//GEN-END:variables
-
-    private double getConvertFactor(String value) {
-        if(value.equals("Metar"))
-            return 1;
-        else if(value.equals("Milimetar"))
-            return 1000;
-        else if(value.equals("Centimetar"))
-            return 100;
-        else if(value.equals("Decimetar"))
-            return 10;
-        else if(value.equals("Kilometar"))
-            return 0.001;
-        else if(value.equals("Inči"))
-            return 39.37008;
-        else if(value.equals("Jardi"))
-            return 1.093613;
-        else if(value.equals("Milje"))
-            return 0.000621;
-        else if(value.equals("Nautičke milje"))
-            return 0.00054;
-        
-        return -1;
-    }
 }

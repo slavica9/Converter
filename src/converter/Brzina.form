@@ -2,7 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
-    <Property name="name" type="java.lang.String" value="Duzina" noResource="true"/>
+    <Property name="name" type="java.lang.String" value="Brzina" noResource="true"/>
   </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -31,10 +31,16 @@
                   <Component id="firstAmountField" alignment="0" max="32767" attributes="0"/>
                   <Component id="secondAmountField" alignment="0" max="32767" attributes="0"/>
                   <Component id="firstValuteBox" alignment="0" max="32767" attributes="0"/>
-                  <Component id="secondValuteBox" alignment="0" pref="382" max="32767" attributes="0"/>
+                  <Component id="secondValuteBox" alignment="0" pref="390" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Component id="button" alignment="0" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -62,32 +68,83 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="button" min="-2" max="-2" attributes="0"/>
           </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="128" max="32767" attributes="0"/>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="Tezina" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="462" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+    <Component class="javax.swing.JLabel" name="secondValuteLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Second Valute"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="secondValuteBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="Metar/sekund"/>
+            <StringItem index="1" value="Kilometar/sat"/>
+            <StringItem index="2" value="Milja/sat"/>
+            <StringItem index="3" value="Cvorova"/>
+            <StringItem index="4" value="Maha"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JLabel" name="firstAmountLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="amount"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="firstValuteLabel">
+    <Component class="javax.swing.JComboBox" name="firstValuteBox">
       <Properties>
-        <Property name="text" type="java.lang.String" value="First Valute"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="Metar/sekund"/>
+            <StringItem index="1" value="Kilometar/sat"/>
+            <StringItem index="2" value="Milja/sat"/>
+            <StringItem index="3" value="Cvorova"/>
+            <StringItem index="4" value="Maha"/>
+          </StringArray>
+        </Property>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="firstAmountField">
-    </Component>
-    <Component class="javax.swing.JTextField" name="secondAmountField">
     </Component>
     <Component class="javax.swing.JLabel" name="secondAmountLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="amount"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="secondValuteLabel">
+    <Component class="javax.swing.JTextField" name="secondAmountField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="firstAmountField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="firstValuteLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Second Valute"/>
+        <Property name="text" type="java.lang.String" value="First Valute"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="button">
@@ -97,40 +154,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="firstValuteBox">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="9">
-            <StringItem index="0" value="Milimetar"/>
-            <StringItem index="1" value="Centimetar"/>
-            <StringItem index="2" value="Decimetar"/>
-            <StringItem index="3" value="Metar"/>
-            <StringItem index="4" value="Kilometar"/>
-            <StringItem index="5" value="In&#x10d;i"/>
-            <StringItem index="6" value="Jardi"/>
-            <StringItem index="7" value="Milje"/>
-            <StringItem index="8" value="Nauti&#x10d;ke milje"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="secondValuteBox">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="9">
-            <StringItem index="0" value="Milimetar"/>
-            <StringItem index="1" value="Centimetar"/>
-            <StringItem index="2" value="Decimetar"/>
-            <StringItem index="3" value="Metar"/>
-            <StringItem index="4" value="Kilometar"/>
-            <StringItem index="5" value="In&#x10d;i"/>
-            <StringItem index="6" value="Jardi"/>
-            <StringItem index="7" value="Milje"/>
-            <StringItem index="8" value="Nauti&#x10d;ke milje"/>
-          </StringArray>
-        </Property>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>
