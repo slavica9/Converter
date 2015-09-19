@@ -19,6 +19,11 @@ public class Vrijeme extends javax.swing.JPanel {
      */
     public Vrijeme() {
         initComponents();
+        
+        firstValuteBox.setSelectedItem("Sekund");
+        secondValuteBox.setSelectedItem("Sekund");
+        
+        secondAmountField.setEditable(false);
     }
 
     /**
@@ -138,7 +143,12 @@ public class Vrijeme extends javax.swing.JPanel {
             int index = tempString.indexOf('.');
             int rest = tempString.substring(index+1).length();
             String insert = tempString.substring(0, index+1 + ((rest <= 4)?(rest):(4)));
+            if(tempString.contains("E"))
+            {
+                insert += tempString.substring(tempString.indexOf("E"));
+            }
 
+            System.out.println(insert + "\t" + tempString);
             secondAmountField.setText(""+insert);
         }
     }//GEN-LAST:event_buttonActionPerformed

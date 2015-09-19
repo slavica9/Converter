@@ -19,6 +19,7 @@ public class Brzina extends javax.swing.JPanel {
      */
     public Brzina() {
         initComponents();
+        secondAmountField.setEditable(false);
     }
 
     /**

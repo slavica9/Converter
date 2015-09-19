@@ -19,6 +19,11 @@ public class Tezina extends javax.swing.JPanel {
      */
     public Tezina() {
         initComponents();
+        
+        firstValuteBox.setSelectedItem("Kilogram");
+        secondValuteBox.setSelectedItem("Kilogram");
+        
+        secondAmountField.setEditable(false);
     }
 
     /**

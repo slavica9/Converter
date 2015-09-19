@@ -128,8 +128,7 @@ public class Length extends javax.swing.JPanel {
             String tempString = temp.toString();
             int index = tempString.indexOf('.');
             int rest = tempString.substring(index+1).length()-1;
-            String insert = tempString.substring(0, index + ((rest < 4)?(rest):(4)));
-
+            String insert = tempString.substring(0, index + ((rest < 4)?(rest+2):(4)));
             secondAmountField.setText(""+insert);
         }
     }//GEN-LAST:event_buttonActionPerformed

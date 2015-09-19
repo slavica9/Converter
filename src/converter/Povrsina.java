@@ -19,6 +19,7 @@ public class Povrsina extends javax.swing.JPanel {
      */
     public Povrsina() {
         initComponents();
+        secondAmountField.setEditable(false);
     }
 
     /**

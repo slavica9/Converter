@@ -19,6 +19,7 @@ public class Temperatura extends javax.swing.JPanel {
      */
     public Temperatura() {
         initComponents();
+        secondAmountField.setEditable(false);
     }
 
     /**
@@ -147,9 +148,9 @@ public class Temperatura extends javax.swing.JPanel {
         if(value.equals("Celzijus"))
             return  1;
         else if(value.equals("Kelvin"))
-            return 2;
-        else if(value.equals("Fahrein"))
             return 3;
+        else if(value.equals("Fahrein"))
+            return 2;
         
         return -1;
     }
