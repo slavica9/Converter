@@ -131,7 +131,7 @@ public class Tezina extends javax.swing.JPanel {
             Float vrijednost = Float.parseFloat(firstAmountField.getText());
             double value1 = getConvertFactor(firstValuteBox.getSelectedItem().toString());
             double value2 = getConvertFactor(secondValuteBox.getSelectedItem().toString());
-            Double temp = vrijednost*(value2/value1);
+            Double temp = vrijednost*(value1/value2);
 
             String tempString = temp.toString();
             int index = tempString.indexOf('.');
